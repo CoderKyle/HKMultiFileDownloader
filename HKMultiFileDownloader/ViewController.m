@@ -21,7 +21,7 @@
 }
 
 - (IBAction)onMultiDownloader:(id)sender{
-    [HKMultiFileDownloader hk_downloadWithURL:@"http://buspic.gpsoo.net/goome01/M00/00/21/wKgCoVcSDCeEBHmZAAAAAA9L7Zk38.jpeg" completion:^(NSData *data, NSUInteger totalLength) {
+    [HKMultiFileDownloader hk_downloadWithURL:@"http://ww1.sinaimg.cn/mw690/5993966fjw1f5v1u972lbj20sg0iztby.jpg" completion:^(NSData *data, NSUInteger totalLength) {
         
     }];
 }
