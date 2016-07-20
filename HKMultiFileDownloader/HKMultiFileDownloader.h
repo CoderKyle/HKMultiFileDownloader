@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-typedef void (^HKMultiFileCompletion)(NSData *data, NSUInteger totalLength);
+typedef void (^HKMultiFileCompletion)(NSError *error, NSData *data);
 
 
 @interface HKMultiFileDownloader : NSObject
@@ -28,13 +28,15 @@ typedef void (^HKMultiFileCompletion)(NSData *data, NSUInteger totalLength);
  */
 @property (nonatomic, assign) NSTimeInterval timeoutInterval;
 
+@property (nonatomic, assign, readonly) long long totalLength;
+
 /**
  *  多线程下载文件
  *
  *  @param URL        HTTP链接
  *  @param completion  HKMultiFileCompletion
  */
-+ (void)hk_downloadWithURL:(NSString*)URL completion:(HKMultiFileCompletion)completion;
++ (instancetype)hk_downloadWithURL:(NSString*)URL completion:(HKMultiFileCompletion)completion;
 
 /**
  *  初始化方法

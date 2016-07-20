@@ -1,8 +1,8 @@
 //
 //  AppDelegate.m
-//  HKMultiFileDownloader
+//  DownloaderDemo
 //
-//  Created by HuangKai on 16/4/25.
+//  Created by HuangKai on 16/7/20.
 //  Copyright © 2016年 HuangKai. All rights reserved.
 //
 

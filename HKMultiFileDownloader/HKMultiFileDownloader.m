@@ -42,33 +42,21 @@
 
 @property (nonatomic, copy) HKMultiFileCompletion completion;
 
-@property (nonatomic, assign) long long totalLength;
-
 @property (nonatomic, strong) NSArray *fileInfos;
 
 @end
 
 @implementation HKMultiFileDownloader
 
-+ (void)hk_downloadWithURL:(NSString*)URL completion:(HKMultiFileCompletion)completion{
++ (instancetype)hk_downloadWithURL:(NSString*)URL completion:(HKMultiFileCompletion)completion{
     if (URL.length == 0) {
-        completion(nil, 0);
-        return;
+        completion([[NSError alloc] init], nil);
+        return nil;
     }
     
     HKMultiFileDownloader *downloader = [[HKMultiFileDownloader alloc] initWithURL:URL];
-    NSDate *beginDate = [NSDate date];
-    [downloader downloadWithCompletion:^(NSData *data, NSUInteger totalLength) {
-        NSDate *endDate = [NSDate date];
-        if (data) {
-            NSLog(@"线程数量：%ld ,多线程耗时:%f", (long)downloader.requestCount, [endDate timeIntervalSinceDate:beginDate]);
-        }else{
-            NSLog(@"线程数量：%ld ,下载出错", (long)downloader.requestCount);
-        }
-        if (completion) {
-            completion(data, totalLength);
-        }
-    }];
+    [downloader downloadWithCompletion:completion];
+    return downloader;
 }
 
 - (instancetype)initWithURL:(NSString *)URL {
@@ -91,9 +79,11 @@
     
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         self.completion = completion;
-        self.totalLength = [self requestFilesize];
+        _totalLength = [self requestFilesize];
         if (self.totalLength == 0) {
-            if (self.completion) completion(nil, 0);
+            if (self.completion){
+                completion([[NSError alloc] init], nil);
+            }
             return;
         }
         
@@ -140,11 +130,11 @@
         }
         if (mudata.length != self.totalLength) {
             if (self.completion) {
-                self.completion(nil, self.totalLength);
+                self.completion([[NSError alloc] init], nil);
             }
         }else{
             if (self.completion) {
-                self.completion([mudata copy], self.totalLength);
+                self.completion(nil, [mudata copy]);
             }
         }
     });

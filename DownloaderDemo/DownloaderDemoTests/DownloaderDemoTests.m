@@ -1,18 +1,18 @@
 //
-//  HKMultiFileDownloaderTests.m
-//  HKMultiFileDownloaderTests
+//  DownloaderDemoTests.m
+//  DownloaderDemoTests
 //
-//  Created by HuangKai on 16/4/25.
+//  Created by HuangKai on 16/7/20.
 //  Copyright © 2016年 HuangKai. All rights reserved.
 //
 
 #import <XCTest/XCTest.h>
 
-@interface HKMultiFileDownloaderTests : XCTestCase
+@interface DownloaderDemoTests : XCTestCase
 
 @end
 
-@implementation HKMultiFileDownloaderTests
+@implementation DownloaderDemoTests
 
 - (void)setUp {
     [super setUp];

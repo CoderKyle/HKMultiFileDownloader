@@ -1,12 +1,13 @@
 //
 //  ViewController.h
-//  HKMultiFileDownloader
+//  DownloaderDemo
 //
-//  Created by HuangKai on 16/4/25.
+//  Created by HuangKai on 16/7/20.
 //  Copyright © 2016年 HuangKai. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
+#import "HKMultiFileDownloader.h"
 
 @interface ViewController : UIViewController
 

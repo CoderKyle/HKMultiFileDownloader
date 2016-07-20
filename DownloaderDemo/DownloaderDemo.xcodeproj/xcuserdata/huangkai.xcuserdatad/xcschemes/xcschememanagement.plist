@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>HKMultiFileDownloader.xcscheme</key>
+		<key>DownloaderDemo.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
@@ -12,17 +12,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>374DBF101CCDEC960004B3A0</key>
+		<key>37220D071D3F51F4005352DF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>374DBF291CCDEC960004B3A0</key>
+		<key>37220D201D3F51F5005352DF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>374DBF341CCDEC960004B3A0</key>
+		<key>37220D2B1D3F51F5005352DF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
