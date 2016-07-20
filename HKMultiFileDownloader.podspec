@@ -7,7 +7,7 @@ Pod::Spec.new do |s|
     s.authors      = {'CoderKyle' => 'huangkai525@qq.com'}
     s.platform     = :ios, '7.0'
     s.source       = {:git => 'https://github.com/CoderKyle/HKMultiFileDownloader.git', :tag => s.version}
-    s.source_files = "HKMultiFileDownloader"
+    s.source_files = 'HKMultiFileDownloader'
     s.requires_arc = true
 end
 
